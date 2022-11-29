@@ -1,0 +1,32 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "outDir": "./dist"
+    // Config options if "strict" is set to "false"
+    // strictNullChecks --> Check whether a variable may be undefined or null at the time of usage. If it is, you need to add the additional typing to that variable
+
+    // strictPropertyInitialization --> checks that all properties inside of a class are initialized at the time of instatntiation
+    // Ways to fix:
+    // 1. Add additional typing
+    // 2. Use the definite assignment assertion operator --> !
+    // 3. Give a value to each in the class definition
+    // 4. Assign a value with a constructor
+
+    // strictBindCallApply --> ensure that we are providing the right types to a function when we can use bind, call, or apply
+    // This is used when changing what the variable of "this" is referring to in class-function definitions.
+
+    // strictFunctionTypes --> ensures that the function type that is being passed in is the same as the one that's required.
+    // Example in callback function --> If the paramter calls for a function with a single parameter of type number | string, we cannot pass in a function where the only parameter is of type number. It MUST match perfectly and be a number | string
+    // This also extends to inheritance. If the paramter is calling for a parent class and you try to pass in a descendant class (extends the parent class), then it will throw an error
+
+    // noImplicitAny --> ensure a property, parameter, or function has a type. It cannot implicitly be any.
+
+    // noUnusedLocals and noUnusedParameters --> If a variable or parameter is declared but never used, then it will throw an error
+
+    // noImplicitReturns --> if a function has a declared return, then it MUST return that return. Occasionally you may run into a situation where you want a function to only return something when a condition is met and not return anything else. This option forces you to always return something.
+
+    // noFallthroughCaseInSwitch --> Must add 'break' to cases in switch statements to prevent cases falling through into other cases.
+
+    // noImplicitThis --> Ensures that we don't write code using 'this' that is outside of its scope
+  }
+}
